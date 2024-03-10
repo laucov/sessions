@@ -1,0 +1,9 @@
+{
+    "preset": "psr12",
+    "exclude": [
+        "vendor"
+    ],
+    "rules": {
+        "no_trailing_whitespace_in_comment": false
+    }
+}
