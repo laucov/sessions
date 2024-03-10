@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bd92705392a2107bb2e6c3509458cdb",
+    "content-hash": "efad3abae61352327ece54056e6cb62d",
     "packages": [
+        {
+            "name": "laucov/arrays",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laucov/arrays.git",
+                "reference": "2247b24f0d9bc1e1097b95309764a889fba7ceb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laucov/arrays/zipball/2247b24f0d9bc1e1097b95309764a889fba7ceb9",
+                "reference": "2247b24f0d9bc1e1097b95309764a889fba7ceb9",
+                "shasum": ""
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13",
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laucov\\Arrays\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Rafael Covaleski Pereira",
+                    "email": "rafael.covaleski@laucov.com"
+                }
+            ],
+            "description": "Library for complex array manipulation.",
+            "support": {
+                "issues": "https://github.com/laucov/arrays/issues",
+                "source": "https://github.com/laucov/arrays/tree/v1.0.0"
+            },
+            "time": "2024-01-30T11:29:04+00:00"
+        },
         {
             "name": "laucov/db",
             "version": "v1.1.1",

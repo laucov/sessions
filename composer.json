@@ -20,6 +20,7 @@
         "laravel/pint": "^1.13"
     },
     "require": {
-        "laucov/db": "^1.0"
+        "laucov/db": "^1.0",
+        "laucov/arrays": "^1.0"
     }
 }
