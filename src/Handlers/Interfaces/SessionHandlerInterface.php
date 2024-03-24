@@ -67,6 +67,11 @@ interface SessionHandlerInterface
     public function regenerate(string $id, bool $delete_old_session): string;
 
     /**
+     * Check if a session ID is valid.
+     */
+    public function validate(string $id): bool;
+
+    /**
      * Write data to the session with the given ID.
      */
     public function write(string $id, string $data): void;

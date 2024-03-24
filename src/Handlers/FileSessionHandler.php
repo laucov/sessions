@@ -277,6 +277,15 @@ class FileSessionHandler implements SessionHandlerInterface
     }
 
     /**
+     * Check if a session ID is valid.
+     */
+    public function validate(string $id): bool
+    {
+        return preg_match('/^[a-f\d]+$/', $id) === 1
+            && file_exists($this->directory . $id);
+    }
+
+    /**
      * Write data to the session with the given ID.
      */
     public function write(string $id, string $data): void

@@ -53,7 +53,9 @@ class FileSessionHandlerTest extends TestCase
      * @covers ::open
      * @covers ::read
      * @covers ::regenerate
+     * @covers ::validate
      * @covers ::write
+     * @todo ::gc
      */
     public function testCanManipulateSessions(): void
     {
@@ -68,10 +70,12 @@ class FileSessionHandlerTest extends TestCase
             SessionOpening::NOT_FOUND,
             $this->handler->open('foobarbaz'),
         );
+        $this->assertFalse($this->handler->validate('foobarbaz'));
 
         // Create session.
         $id_a = $this->handler->create();
         $this->assertMatchesRegularExpression('/^[a-f\d]+$/', $id_a);
+        $this->assertTrue($this->handler->validate($id_a));
 
         // Get created session.
         $this->assertSame(
@@ -84,6 +88,13 @@ class FileSessionHandlerTest extends TestCase
             SessionOpening::ALREADY_OPEN,
             $this->handler->open($id_a),
         );
+
+        // Ensure that can validate even when open.
+        $this->assertTrue($this->handler->validate($id_a));
+
+        // Validate ID against injections.
+        $malicious_id = '../session-files/' . $id_a;
+        $this->assertFalse($this->handler->validate($malicious_id));
 
         // Close the session.
         $this->assertSame(
